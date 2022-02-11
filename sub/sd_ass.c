@@ -196,7 +196,8 @@ static void enable_output(struct sd *sd, bool enable)
     } else {
         ctx->ass_renderer = ass_renderer_init(ctx->ass_library);
 
-        mp_ass_configure_fonts(ctx->ass_renderer, sd->opts->sub_style,
+        mp_ass_configure_fonts(ctx->ass_renderer, ctx->ass_library,
+                               sd->opts->sub_style,
                                sd->global, sd->log);
     }
 }

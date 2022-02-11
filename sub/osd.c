@@ -67,6 +67,8 @@ static const m_option_t style_opts[] = {
         {"auto", 0}, {"left", 1}, {"center", 2}, {"right", 3})},
     {"font-provider", OPT_CHOICE(font_provider,
         {"auto", 0}, {"none", 1}, {"fontconfig", 2}), .flags = UPDATE_SUB_HARD},
+    {"fonts-dir", OPT_STRING(fonts_dir),
+        .flags = M_OPT_FILE | UPDATE_SUB_HARD},
     {0}
 };
 
@@ -85,6 +87,7 @@ const struct m_sub_options osd_style_conf = {
         .margin_y = 22,
         .align_x = -1,
         .align_y = -1,
+        .fonts_dir = "~~/fonts",
     },
     .change_flags = UPDATE_OSD,
 };
@@ -104,6 +107,7 @@ const struct m_sub_options sub_style_conf = {
         .margin_y = 22,
         .align_x = 0,
         .align_y = 1,
+        .fonts_dir = "~~/fonts",
     },
     .change_flags = UPDATE_OSD,
 };

@@ -61,7 +61,8 @@ static void create_ass_renderer(struct osd_state *osd, struct ass_state *ass)
     if (!ass->render)
         abort();
 
-    mp_ass_configure_fonts(ass->render, osd->opts->osd_style,
+    mp_ass_configure_fonts(ass->render, ass->library,
+                           osd->opts->osd_style,
                            osd->global, ass->log);
     ass_set_pixel_aspect(ass->render, 1.0);
 }
